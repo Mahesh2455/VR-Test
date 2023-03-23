@@ -38,6 +38,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
         /// <summary>
         /// See <see cref="MonoBehaviour"/>.
         /// </summary>
+        [System.Obsolete]
         protected void OnEnable()
         {
 #if XR_HANDS
@@ -56,6 +57,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.Hands
         /// <summary>
         /// See <see cref="MonoBehaviour"/>.
         /// </summary>
+        [System.Obsolete]
         protected void OnDisable()
         {
 #if XR_HANDS

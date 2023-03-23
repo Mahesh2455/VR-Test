@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,13 +6,14 @@ public class HandAnimationController : MonoBehaviour
     [SerializeField] private InputActionProperty _pinchAnimationAction;
     [SerializeField] private InputActionProperty _gripAnimationAction;
     private Animator _handAnimator;
-    float triggerValue;
+   
     // Start is called before the first frame update
     void Start()
     {
         _pinchAnimationAction.action.performed += PinchHand;
         _gripAnimationAction.action.performed += GripHand;
         _handAnimator = GetComponent<Animator>();
+
     }
 
 
@@ -41,5 +39,4 @@ public class HandAnimationController : MonoBehaviour
     {
         _handAnimator.SetFloat("Grip", obj.ReadValue<float>());
     }
-
 }
