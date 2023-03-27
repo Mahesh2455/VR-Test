@@ -18,11 +18,8 @@ public class NPCController : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
-    {
-       if(other.collider.CompareTag("Wall"))
-       {
-            moveSpeed = -moveSpeed;
-       } 
+    { 
+      moveSpeed = -moveSpeed;
     }
   
 }
