@@ -19,7 +19,21 @@ public class NPCController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     { 
-      moveSpeed = -moveSpeed;
+      if(other.collider.CompareTag("Wall"))
+        moveSpeed = -moveSpeed;
+      if(other.collider.CompareTag("Bullet"))
+      {
+        spiderAnimator.SetBool("takeDamage",true);
+        StartCoroutine(ResetAnimation());
+      }
     }
+
+    private IEnumerator ResetAnimation()
+    {
+      yield return new WaitForSeconds(1f);
+      spiderAnimator.SetBool("takeDamage",false);
+    }
+
+
   
 }
